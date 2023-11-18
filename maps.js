@@ -182,7 +182,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	function checkKannaMaps() {
 		if (window.KannaMaps) {
 			console.log('window.KannaMaps exists:', window.KannaMaps);
-			initMap();
+			//sometimes window.KannaMaps is declared but not the nodes i need
+			setTimeout(() => {
+				initMap();
+			  }, 1000);
 		} else {
 			console.log('window.KannaMaps does not exist yet. Retrying in 1000ms...');
 			setTimeout(checkKannaMaps, 1000);
