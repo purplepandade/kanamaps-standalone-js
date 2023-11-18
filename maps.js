@@ -45,16 +45,77 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	let locations = [];
 
 	let map;
+
 	let markers = [];
 	let infoWindows = [];
+
+	let mapStyles = [
+		{
+			"stylers": [
+				{
+					"hue": "#baf4c4"
+				},
+				{
+					"saturation": 10
+				}
+			]
+		},
+		{
+			"featureType": "water",
+			"stylers": [
+				{
+					"color": "#effefd"
+				}
+			]
+		},
+		{
+			"featureType": "all",
+			"elementType": "labels",
+			"stylers": [
+				{
+					"visibility": "off"
+				}
+			]
+		},
+		{
+			"featureType": "administrative",
+			"elementType": "labels",
+			"stylers": [
+				{
+					"visibility": "on"
+				}
+			]
+		},
+		{
+			"featureType": "road",
+			"elementType": "all",
+			"stylers": [
+				{
+					"visibility": "off"
+				}
+			]
+		},
+		{
+			"featureType": "transit",
+			"elementType": "all",
+			"stylers": [
+				{
+					"visibility": "off"
+				}
+			]
+		}
+	]
 
 	async function initMap() {
 		//@ts-ignore
 		const { Map } = await google.maps.importLibrary('maps');
 
+
+
 		map = new Map(document.querySelector('.map_map-holder'), {
 			center: { lat: -34.397, lng: 150.644 },
 			zoom: 8,
+			styles: mapStyles
 		});
 
 		let locationDiv = document.querySelector('[c-el="all-apothecaries-list"]');
