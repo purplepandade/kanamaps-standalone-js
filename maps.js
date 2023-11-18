@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			infoWindows.forEach((infowindow) => {
 				infowindow.close();
 			});
-            map.panTo(mapMarker.getPosition());
+			map.panTo(mapMarker.getPosition());
 			infowindow.open({
 				anchor: mapMarker,
 				map,
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			marker.lat = location._vendor.location.latitude;
 			marker.lng = location._vendor.location.longitude;
 			marker.latlng = new google.maps.LatLng(marker.lat, marker.lng);
-            marker.htmlNode = location.clickNode;
+			marker.htmlNode = location.clickNode;
 
 			var mapMarker = new google.maps.Marker({
 				position: marker.latlng,
@@ -108,9 +108,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				openInfo(mapMarker, infowindow);
 			});
 
-            marker.htmlNode.addEventListener('click', () => {
-                openInfo(mapMarker, infowindow);
-            })
+			marker.htmlNode.addEventListener('click', () => {
+				openInfo(mapMarker, infowindow);
+			});
 
 			bounds.extend(marker.latlng);
 			mapMarker.setMap(map);
