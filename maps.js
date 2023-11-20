@@ -150,12 +150,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				position: marker.latlng,
 			});
 
-			let contentString = `<div style="text-align:center;"><b>${location._vendor.name}: </b>
+			let contentString = `<div style="text-align:center;">
+			<b>${location._vendor.name}:</b>
                 <br>
-                <b>${location._vendor.strasse_und_nummer}</b>
+                ${location._vendor.strasse_und_nummer}
                 <br>
-                <b>${location._vendor.PLZ} ${location._vendor.Stadt}</b>
-
+                ${location._vendor.PLZ} ${location._vendor.Stadt}
                 <br>
                 <a href="${location._vendor.live_url}">Zur Website</a>
             </div>`;
